@@ -13,21 +13,6 @@ enum custom_keycodes {
     NUMWORD,
     ST_MACRO_HOME_DIR,
     ST_MACRO_PAREN_DIR,
-    ST_MACRO_RAR,
-    ST_MACRO_RAR_N,
-    ST_MACRO_LANG,
-    ST_MACRO_ZOOMIN,
-    ST_MACRO_ZOOMOUT,
-    ST_MACRO_ZOOM_RESET,
-    ST_MACRO_QR,
-    ST_MACRO_UNDO,
-    ST_MACRO_GOTO,
-    ST_MACRO_SAVE_FILE,
-    ST_MACRO_JOIN_LINE,
-    ST_MACRO_KILL_BUF,
-    ST_MACRO_MARK_BUF,
-    ST_MACRO_OPEN_FILE,
-    ST_MACRO_SWITCH_BUF,
     STICKY_SHIFT_L_NUM,
     STICKY_SHIFT_L_NAV,
 };
@@ -47,10 +32,16 @@ enum layers {
 
 //clang-format off
 
+#define ZOOM_IN RCS(KC_EQUAL)
+#define ZOOM_OUT RCTL(KC_MINUS)
+#define ZOOM_RESET RCTL(KC_0)
+#define LAR LALT(KC_R)
+
 #define __EMPTY5__ _______, _______, _______, _______, _______
 #define __EMPTY3__ _______, _______, _______
 #define __HRM_LEFT__ KC_LGUI, KC_LALT, KC_LCTL, LALT(LCTL(KC_NO)), KC_LSFT
 #define __HRM_RIGHT__ KC_RSFT, RALT(RCTL(KC_NO)), KC_RCTL, KC_RALT, KC_RGUI
+
 // naming: layer_side_row. e.g. BASE_L1
 #define __BASE_R1__ LT(7,KC_Y),         KC_U,                       RCS_T(KC_I),          RSA_T(KC_O),         KC_P
 #define __BASE_R2__ MT(MOD_RSFT, KC_H), MT(MOD_RCTL|MOD_RALT,KC_J), MT(MOD_RCTL, KC_K),   MT(MOD_RALT, KC_L),  MT(MOD_RGUI, KC_SCLN)
@@ -75,17 +66,17 @@ enum layers {
 #define __NUMNAV_R1__ KC_PLUS,            KC_7,           KC_8,           KC_9,           KC_ASTR
 #define __NUMNAV_R2__ KC_MINUS,           KC_4,           KC_5,           KC_6,           KC_DOT
 #define __NUMNAV_R3__ KC_0,               KC_1,           KC_2,           KC_3,           KC_SLASH
-#define __NUMNAV_RT__ KC_EQUAL,           ST_MACRO_RAR,   _______
+#define __NUMNAV_RT__ KC_EQUAL,           LAR,   _______
 
-#define __NUMNAV_L1__ KC_WWW_FORWARD,     KC_PGUP,        KC_UP,          KC_PGDN,        ST_MACRO_ZOOM_RESET
-#define __NUMNAV_L2__ KC_WWW_BACK,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       ST_MACRO_ZOOMIN
-#define __NUMNAV_L3__ KC_WWW_HOME,        KC_HOME,        KC_APP,         KC_END,         ST_MACRO_ZOOMOUT
+#define __NUMNAV_L1__ KC_WWW_FORWARD,     KC_PGUP,        KC_UP,          KC_PGDN,        ZOOM_RESET
+#define __NUMNAV_L2__ KC_WWW_BACK,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       ZOOM_IN
+#define __NUMNAV_L3__ KC_WWW_HOME,        KC_HOME,        KC_APP,         KC_END,         ZOOM_OUT
 #define __NUMNAV_LT__ __EMPTY3__
 
 #define __FNMOUSE_R1__ KC_F12,            KC_F7,          KC_F8,          KC_F9,          DM_RSTP
 #define __FNMOUSE_R2__ KC_F11,            KC_F4,          KC_F5,          KC_F6,          DM_REC2
 #define __FNMOUSE_R3__ KC_F10,            KC_F1,          KC_F2,          KC_F3,          DM_REC1
-#define __FNMOUSE_RT__ DM_PLY1,           DM_PLY1,        _______
+#define __FNMOUSE_RT__ DM_PLY1,           DM_PLY2,        _______
 
 #define __FNMOUSE_L1__ _______,           KC_MS_WH_UP,    KC_MS_UP,       KC_MS_WH_DOWN,  _______
 #define __FNMOUSE_L2__ KC_MS_WH_LEFT,     KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    KC_MS_WH_RIGHT
@@ -117,19 +108,75 @@ enum layers {
 #define __ONEHAND_R3__ __EMPTY5__
 #define __ONEHAND_RT__ __EMPTY3__
 
-#define __ONEHAND_L1__ KC_WWW_FORWARD, KC_HOME, KC_WH_U, KC_END,  ST_MACRO_ZOOMOUT
-#define __ONEHAND_L2__ KC_WWW_BACK,    KC_BTN3, KC_BTN2, KC_BTN1, ST_MACRO_ZOOMIN
-#define __ONEHAND_L3__ KC_WWW_HOME,    KC_PGUP, KC_WH_D, KC_PGDN, ST_MACRO_ZOOM_RESET
+#define __ONEHAND_L1__ KC_WWW_FORWARD, KC_HOME, KC_WH_U, KC_END,  ZOOM_OUT
+#define __ONEHAND_L2__ KC_WWW_BACK,    KC_BTN3, KC_BTN2, KC_BTN1, ZOOM_IN
+#define __ONEHAND_L3__ KC_WWW_HOME,    KC_PGUP, KC_WH_D, KC_PGDN, ZOOM_RESET
 #define __ONEHAND_LT__ __EMPTY3__
 
-#define __AUTOMOUSE_R1__ KC_NO,                KC_NO,    KC_NO,    KC_NO,    KC_WWW_FORWARD
-#define __AUTOMOUSE_R2__ LCTL(LSFT(KC_EQUAL)), KC_MS_BTN1, SCRL_MO,    KC_MS_BTN2, KC_WWW_BACK
-#define __AUTOMOUSE_R3__ LCTL(KC_MINUS),       KC_END,     KC_MS_BTN3, KC_HOME,    LCTL(KC_0)
-#define __AUTOMOUSE_RT__ KC_NO,                KC_NO,      KC_NO
+#define __AUTOMOUSE_R1__ KC_NO,          KC_NO,      KC_NO,      KC_NO,      KC_WWW_FORWARD
+#define __AUTOMOUSE_R2__ ZOOM_IN,        KC_MS_BTN1, SCRL_MO,    KC_MS_BTN2, KC_WWW_BACK
+#define __AUTOMOUSE_R3__ ZOOM_OUT,       KC_END,     KC_MS_BTN3, KC_HOME,    ZOOM_RESET
+#define __AUTOMOUSE_RT__ KC_NO,          KC_NO,      KC_NO
 
-#define __AUTOMOUSE_L1__ KC_WWW_FORWARD,       KC_NO,    KC_NO,    KC_NO,    KC_NO
-#define __AUTOMOUSE_L2__ KC_WWW_BACK,          KC_MS_BTN2, SCRL_MO,    KC_MS_BTN1, LCTL(LSFT(KC_EQUAL))
-#define __AUTOMOUSE_L3__ LCTL(KC_0),           KC_HOME,    KC_MS_BTN3, KC_END,     LCTL(KC_MINUS)
-#define __AUTOMOUSE_LT__ KC_NO,                KC_NO,      KC_NO
+#define __AUTOMOUSE_L1__ KC_WWW_FORWARD, KC_NO,      KC_NO,      KC_NO,      KC_NO
+#define __AUTOMOUSE_L2__ KC_WWW_BACK,    KC_MS_BTN2, SCRL_MO,    KC_MS_BTN1, ZOOM_IN
+#define __AUTOMOUSE_L3__ ZOOM_RESET,     KC_HOME,    KC_MS_BTN3, KC_END,     ZOOM_OUT
+#define __AUTOMOUSE_LT__ KC_NO,          KC_NO,      KC_NO
+
+// 3*5+3
+#define __BASE_1__ __BASE_L1__, __BASE_R1__
+#define __BASE_2__ __BASE_L2__, __BASE_R2__
+#define __BASE_3__ __BASE_L3__, __BASE_R3__
+#define __BASE_T__ __BASE_LT__, __BASE_RT__
+
+#define __SYMR_1__ __EMPTY5__,   __SYMBOLS_R1__
+#define __SYMR_2__ __HRM_LEFT__, __SYMBOLS_R2__
+#define __SYMR_3__ __EMPTY5__,   __SYMBOLS_R3__
+#define __SYMR_T__ __EMPTY3__,   __SYMBOLS_RT__
+
+#define __SYML_1__ __SYMBOLS_L1__, __EMPTY5__
+#define __SYML_2__ __SYMBOLS_L2__, __HRM_RIGHT__
+#define __SYML_3__ __SYMBOLS_L3__, __EMPTY5__
+#define __SYML_T__ __SYMBOLS_LT__, __EMPTY3__
+
+#define __NUM_1__ __EMPTY5__,    __NUMNAV_R1__
+#define __NUM_2__ __HRM_RIGHT__, __NUMNAV_R2__
+#define __NUM_3__ __EMPTY5__,    __NUMNAV_R3__
+#define __NUM_T__ __EMPTY3__,    __NUMNAV_RT__
+
+#define __NAV_1__ __NUMNAV_L1__, __EMPTY5__
+#define __NAV_2__ __NUMNAV_L2__, __HRM_RIGHT__
+#define __NAV_3__ __NUMNAV_L3__, __EMPTY5__
+#define __NAV_T__ __NUMNAV_LT__, __EMPTY3__
+
+#define __FNMAC_1__ __EMPTY5__,   __FNMOUSE_R1__
+#define __FNMAC_2__ __HRM_LEFT__, __FNMOUSE_R2__
+#define __FNMAC_3__ __EMPTY5__,   __FNMOUSE_R3__
+#define __FNMAC_T__ __EMPTY3__,   __FNMOUSE_RT__
+
+#define __MOUSE_1__ __FNMOUSE_L1__, __EMPTY5__
+#define __MOUSE_2__ __FNMOUSE_L2__, __HRM_LEFT__
+#define __MOUSE_3__ __FNMOUSE_L3__, __EMPTY5__
+#define __MOUSE_T__ __FNMOUSE_LT__, __EMPTY3__
+
+#define __SYSMEDIA_1__ __SYSMEDIA_L1__, __SYSMEDIA_R1__
+#define __SYSMEDIA_2__ __SYSMEDIA_L2__, __SYSMEDIA_R2__
+#define __SYSMEDIA_3__ __SYSMEDIA_L3__, __SYSMEDIA_R3__
+#define __SYSMEDIA_T__ __SYSMEDIA_LT__, __SYSMEDIA_RT__
+
+#define __NUMBERS_1__ __NUMBERS_L1__, __NUMBERS_R1__
+#define __NUMBERS_2__ __NUMBERS_L2__, __NUMBERS_R2__
+#define __NUMBERS_3__ __NUMBERS_L3__, __NUMBERS_R3__
+#define __NUMBERS_T__ __NUMBERS_LT__, __NUMBERS_RT__
+
+#define __ONEHAND_1__ __ONEHAND_L1__, __ONEHAND_R1__
+#define __ONEHAND_2__ __ONEHAND_L2__, __ONEHAND_R2__
+#define __ONEHAND_3__ __ONEHAND_L3__, __ONEHAND_R3__
+#define __ONEHAND_T__ __ONEHAND_LT__, __ONEHAND_RT__
+
+#define __AUTOMOUSE_1__ __AUTOMOUSE_L1__, __AUTOMOUSE_R1__
+#define __AUTOMOUSE_2__ __AUTOMOUSE_L2__, __AUTOMOUSE_R2__
+#define __AUTOMOUSE_3__ __AUTOMOUSE_L3__, __AUTOMOUSE_R3__
+#define __AUTOMOUSE_T__ __AUTOMOUSE_LT__, __AUTOMOUSE_RT__
 
 // clang-format on

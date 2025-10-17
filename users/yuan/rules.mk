@@ -17,4 +17,4 @@ DYNAMIC_MACRO_ENABLE = yes
 CAPS_WORD_ENABLE = yes
 REPEAT_KEY_ENABLE = yes
 
-SRC += num_word.c swapper.c
+SRC += custom_process.c num_word.c swapper.c
