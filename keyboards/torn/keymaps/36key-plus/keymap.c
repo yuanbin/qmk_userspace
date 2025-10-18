@@ -125,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // clang-format on
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    torn_set_led(0, IS_LAYER_ON_STATE(state, L_NUMBERS));
-    torn_set_led(1, IS_LAYER_ON_STATE(state, L_ONEHAND));
+    torn_set_led(0, IS_LAYER_ON_STATE(state, L_ONEHAND));
+    torn_set_led(1, IS_LAYER_ON_STATE(state, L_NUMBERS));
     return state;
 }

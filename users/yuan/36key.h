@@ -37,19 +37,22 @@ enum layers {
 #define ZOOM_RESET RCTL(KC_0)
 #define LAR LALT(KC_R)
 
-#define __EMPTY5__ _______, _______, _______, _______, _______
 #define __EMPTY3__ _______, _______, _______
-#define __HRM_LEFT__ KC_LGUI, KC_LALT, KC_LCTL, LALT(LCTL(KC_NO)), KC_LSFT
-#define __HRM_RIGHT__ KC_RSFT, RALT(RCTL(KC_NO)), KC_RCTL, KC_RALT, KC_RGUI
+#define __EMPTY5__ __EMPTY3__, _______, _______
+#define __EMPTY10__ __EMPTY5__, __EMPTY5__
+#define __EMPTY12__ __EMPTY10__, _______, _______
+
+#define __HRM_LEFT__ KC_LSFT, KC_LALT, KC_LCTL, LALT(LCTL(KC_NO)), KC_LGUI
+#define __HRM_RIGHT__ KC_RGUI, RALT(RCTL(KC_NO)), KC_RCTL, KC_RALT, KC_RSFT
 
 // naming: layer_side_row. e.g. BASE_L1
 #define __BASE_R1__ LT(7,KC_Y),         KC_U,                       RCS_T(KC_I),          RSA_T(KC_O),         KC_P
-#define __BASE_R2__ MT(MOD_RSFT, KC_H), MT(MOD_RCTL|MOD_RALT,KC_J), MT(MOD_RCTL, KC_K),   MT(MOD_RALT, KC_L),  MT(MOD_RGUI, KC_SCLN)
+#define __BASE_R2__ MT(MOD_RGUI, KC_H), MT(MOD_RCTL|MOD_RALT,KC_J), MT(MOD_RCTL, KC_K),   MT(MOD_RALT, KC_L),  MT(MOD_RSFT, KC_SCLN)
 #define __BASE_R3__ KC_N,               KC_M,                       MT(MOD_MEH,KC_COMMA), MT(MOD_HYPR,KC_DOT), KC_SLASH
 #define __BASE_RT__ LT(6, KC_TAB),      LT(2, KC_SPACE),            STICKY_SHIFT_L_NAV
 
 #define __BASE_L1__ KC_Q,               LSA_T(KC_W),        MT(MOD_LCTL|MOD_LSFT, KC_E), KC_R,        LT(7,KC_T)
-#define __BASE_L2__ MT(MOD_LGUI, KC_A), MT(MOD_LALT, KC_S), MT(MOD_LCTL, KC_D),          LCA_T(KC_F), MT(MOD_LSFT,KC_G)
+#define __BASE_L2__ MT(MOD_LSFT, KC_A), MT(MOD_LALT, KC_S), MT(MOD_LCTL, KC_D),          LCA_T(KC_F), MT(MOD_LGUI,KC_G)
 #define __BASE_L3__ KC_Z,               MT(MOD_HYPR,KC_X),  MT(MOD_MEH,KC_C),            KC_V,        KC_B
 #define __BASE_LT__ STICKY_SHIFT_L_NUM, LT(1, KC_ENTER),    LT(5,KC_BSPC)
 
@@ -108,10 +111,10 @@ enum layers {
 #define __ONEHAND_R3__ __EMPTY5__
 #define __ONEHAND_RT__ __EMPTY3__
 
-#define __ONEHAND_L1__ KC_WWW_FORWARD, KC_HOME, KC_WH_U, KC_END,  ZOOM_OUT
+#define __ONEHAND_L1__ KC_WWW_FORWARD, KC_PGUP, KC_WH_U, KC_PGDN,  ZOOM_RESET
 #define __ONEHAND_L2__ KC_WWW_BACK,    KC_BTN3, KC_BTN2, KC_BTN1, ZOOM_IN
-#define __ONEHAND_L3__ KC_WWW_HOME,    KC_PGUP, KC_WH_D, KC_PGDN, ZOOM_RESET
-#define __ONEHAND_LT__ __EMPTY3__
+#define __ONEHAND_L3__ KC_WWW_HOME,    KC_HOME, KC_WH_D, KC_END, ZOOM_OUT
+#define __ONEHAND_LT__ _______, _______, TO(L_BASE)
 
 #define __AUTOMOUSE_R1__ KC_NO,          KC_NO,      KC_NO,      KC_NO,      KC_WWW_FORWARD
 #define __AUTOMOUSE_R2__ ZOOM_IN,        KC_MS_BTN1, SCRL_MO,    KC_MS_BTN2, KC_WWW_BACK
@@ -129,7 +132,7 @@ enum layers {
 #define __BASE_3__ __BASE_L3__, __BASE_R3__
 #define __BASE_T__ __BASE_LT__, __BASE_RT__
 
-#define __SYMR_1__ __EMPTY5__,   __SYMBOLS_R1__
+#define __SYMR_1__ _______, _______, TO(L_ONEHAND), _______, _______, __SYMBOLS_R1__
 #define __SYMR_2__ __HRM_LEFT__, __SYMBOLS_R2__
 #define __SYMR_3__ __EMPTY5__,   __SYMBOLS_R3__
 #define __SYMR_T__ __EMPTY3__,   __SYMBOLS_RT__
