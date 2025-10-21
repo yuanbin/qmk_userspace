@@ -59,7 +59,7 @@ enum layers {
 #define __SYMBOLS_R1__ KC_PIPE,           KC_COLN,        KC_LCBR,        KC_RCBR,        KC_GRAVE
 #define __SYMBOLS_R2__ KC_AMPR,           KC_UNDS,        KC_LPRN,        KC_RPRN,        KC_CIRC
 #define __SYMBOLS_R3__ KC_TILD,           KC_DLR,         KC_LBRC,        KC_RBRC,        ST_MACRO_PAREN_DIR
-#define __SYMBOLS_RT__ KC_ESCAPE,         NUMWORD,        _______
+#define __SYMBOLS_RT__ _______,           KC_ESCAPE,      _______
 
 #define __SYMBOLS_L1__ KC_AT,             KC_LABK,        KC_RABK,        KC_HASH,        KC_PERC
 #define __SYMBOLS_L2__ KC_EXLM,           KC_MINUS,       KC_PLUS,        KC_EQUAL,       KC_DQUO
@@ -69,7 +69,7 @@ enum layers {
 #define __NUMNAV_R1__ KC_PLUS,            KC_7,           KC_8,           KC_9,           KC_ASTR
 #define __NUMNAV_R2__ KC_MINUS,           KC_4,           KC_5,           KC_6,           KC_DOT
 #define __NUMNAV_R3__ KC_0,               KC_1,           KC_2,           KC_3,           KC_SLASH
-#define __NUMNAV_RT__ KC_EQUAL,           LAR,   _______
+#define __NUMNAV_RT__ NUMWORD,            LAR,            KC_EQUAL
 
 #define __NUMNAV_L1__ KC_WWW_FORWARD,     KC_PGUP,        KC_UP,          KC_PGDN,        ZOOM_RESET
 #define __NUMNAV_L2__ KC_WWW_BACK,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       ZOOM_IN
@@ -99,7 +99,7 @@ enum layers {
 #define __NUMBERS_R1__ __NUMNAV_R1__
 #define __NUMBERS_R2__ __NUMNAV_R2__
 #define __NUMBERS_R3__ __NUMNAV_R3__
-#define __NUMBERS_RT__ KC_EQUAL, _______, _______
+#define __NUMBERS_RT__ _______, _______, KC_EQUAL
 
 #define __NUMBERS_L1__ __EMPTY5__
 #define __NUMBERS_L2__ __EMPTY5__
