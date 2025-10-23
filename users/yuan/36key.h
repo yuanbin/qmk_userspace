@@ -124,7 +124,7 @@ enum layers {
 #define __AUTOMOUSE_L1__ KC_WWW_FORWARD, KC_NO,      KC_NO,      KC_NO,      KC_NO
 #define __AUTOMOUSE_L2__ KC_WWW_BACK,    KC_MS_BTN2, SCRL_MO,    KC_MS_BTN1, ZOOM_IN
 #define __AUTOMOUSE_L3__ ZOOM_RESET,     KC_HOME,    KC_MS_BTN3, KC_END,     ZOOM_OUT
-#define __AUTOMOUSE_LT__ KC_NO,          KC_NO,      KC_NO
+#define __AUTOMOUSE_LT__ KC_NO,          KC_NO,      TO(L_BASE)
 
 // 3*5+3
 #define __BASE_1__ __BASE_L1__, __BASE_R1__
@@ -132,7 +132,7 @@ enum layers {
 #define __BASE_3__ __BASE_L3__, __BASE_R3__
 #define __BASE_T__ __BASE_LT__, __BASE_RT__
 
-#define __SYMR_1__ _______, _______, TO(L_ONEHAND), _______, _______, __SYMBOLS_R1__
+#define __SYMR_1__ _______, _______, TO(L_LAST), _______, _______, __SYMBOLS_R1__
 #define __SYMR_2__ __HRM_LEFT__, __SYMBOLS_R2__
 #define __SYMR_3__ __EMPTY5__,   __SYMBOLS_R3__
 #define __SYMR_T__ __EMPTY3__,   __SYMBOLS_RT__

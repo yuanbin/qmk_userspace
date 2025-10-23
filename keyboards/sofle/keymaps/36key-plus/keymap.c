@@ -15,6 +15,7 @@
   * along with this program.  If not, see <http://www.gnu.org/licenses/>.
   */
 
+#include "alias.h"
 #include "custom_process.h"
 
 #define LAYOUT_wrapper(...)   LAYOUT(__VA_ARGS__)

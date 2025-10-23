@@ -14,6 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "alias.h"
 #include "custom_process.h"
 
 #define LAYOUT_wrapper(...) LAYOUT_split_3x6_4(__VA_ARGS__)
