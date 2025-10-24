@@ -105,7 +105,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               _______, __BASE_1__,     _______,
 	            SW_APP,  __BASE_2__,     SW_WIN,
               _______, __KB_BASE_3__, _______,
-              __EMPTY3__, MS_BTN1, __BASE_LT__, LT(4, KC_TAB),      LT(2, KC_SPACE), __EMPTY5__
+              __EMPTY3__, KC_MS_BTN1, __BASE_LT__, LT(4, KC_TAB),      LT(2, KC_SPACE), __EMPTY5__
 	            ),
 [L_SYMR] = LAYOUT_wrapper
              (__EMPTY12__,
