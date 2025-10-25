@@ -1,0 +1,1 @@
+#define IS_SPLIT_KEYBOARD

@@ -38,9 +38,13 @@ enum layers {
 #define LAR LALT(KC_R)
 
 #define __EMPTY3__ _______, _______, _______
-#define __EMPTY5__ __EMPTY3__, _______, _______
+#define __EMPTY4__ __EMPTY3__, _______
+#define __EMPTY5__ __EMPTY4__, _______
+#define __EMPTY6__ __EMPTY5__, _______
+#define __EMPTY7__ __EMPTY6__, _______
 #define __EMPTY10__ __EMPTY5__, __EMPTY5__
 #define __EMPTY12__ __EMPTY10__, _______, _______
+#define __EMPTY14__ __EMPTY12__, _______, _______
 
 #define __HRM_LEFT__ KC_LSFT, KC_LALT, KC_LCTL, LALT(LCTL(KC_NO)), KC_LGUI
 #define __HRM_RIGHT__ KC_RGUI, RALT(RCTL(KC_NO)), KC_RCTL, KC_RALT, KC_RSFT
