@@ -37,11 +37,14 @@ enum layers {
 #define ZOOM_RESET RCTL(KC_0)
 #define LAR LALT(KC_R)
 
-#define __EMPTY3__ _______, _______, _______
+#define __EMPTY2__ _______, _______
+#define __EMPTY3__ __EMPTY2__, _______
 #define __EMPTY4__ __EMPTY3__, _______
 #define __EMPTY5__ __EMPTY4__, _______
 #define __EMPTY6__ __EMPTY5__, _______
 #define __EMPTY7__ __EMPTY6__, _______
+#define __EMPTY8__ __EMPTY7__, _______
+#define __EMPTY9__ __EMPTY8__, _______
 #define __EMPTY10__ __EMPTY5__, __EMPTY5__
 #define __EMPTY12__ __EMPTY10__, _______, _______
 #define __EMPTY14__ __EMPTY12__, _______, _______
