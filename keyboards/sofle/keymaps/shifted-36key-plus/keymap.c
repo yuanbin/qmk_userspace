@@ -59,8 +59,8 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
 	      'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R'
 	);
 
-#define __BASE_L0__ KC_MS_BTN3,    KC_MS_BTN2,        KC_MS_BTN1,      ZOOM_IN,    ZOOM_OUT,   ZOOM_RESET
-#define __BASE_R0__ KC_AUDIO_MUTE, KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP, KC_MS_BTN1, KC_MS_BTN2, KC_MS_BTN3
+#define __BASE_L0__ KC_MS_BTN2,    KC_MS_BTN1,        KC_MS_BTN3,      ZOOM_IN,    ZOOM_OUT,   ZOOM_RESET
+#define __BASE_R0__ KC_AUDIO_MUTE, KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP, KC_MS_BTN3, KC_MS_BTN1, KC_MS_BTN2
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -91,9 +91,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_BASE] = LAYOUT_wrapper
              (__BASE_L0__, __BASE_R0__,
               __BASE_L1__, __EMPTY2__, __BASE_R1__,
-	            __BASE_L2__, __EMPTY2__, __BASE_R2__,
+	            __BASE_L2__, SW_APP, SW_WIN, __BASE_R2__,
               __BASE_L3__, __EMPTY4__, __BASE_R3__,
-              MS_BTN1, __BASE_LT__, __EMPTY2__, __BASE_LT__, QK_REP
+              MS_BTN1, __BASE_LT__, __EMPTY2__, __BASE_RT__, QK_REP
 	            ),
 [L_SYMR] = LAYOUT_wrapper
              (__EMPTY12__,
