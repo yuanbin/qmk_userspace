@@ -1,5 +1,13 @@
 #include "custom_process.h"
 
+const uint16_t PROGMEM combo_df[] = {KC_D, KC_F, COMBO_END};
+const uint16_t PROGMEM combo_jk[] = {KC_J, KC_K, COMBO_END};
+
+combo_t key_combos[COMBO_LENGTH] = {
+    [DF_SW_APP] = COMBO(combo_df, 0),
+    [JK_SW_WIN] = COMBO(combo_jk, 0),
+};
+
 bool            sw_app_active = false;
 bool            sw_win_active = false;
 static uint16_t sticky_timer  = 0;
@@ -17,8 +25,45 @@ void sticky_shift_lt(const uint16_t layer, keyrecord_t *record) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    if (!update_swapper(&sw_app_active, KC_LGUI, KC_TAB, SW_APP, keycode, record)) return false; // has update, stop process
-    if (!update_swapper(&sw_win_active, KC_LALT, KC_TAB, SW_WIN, keycode, record)) return false; // has update, stop process
+    if (sw_app_active) {
+        if (record->event.pressed) {
+            switch (keycode) {
+                case KC_F:
+                    tap_code(KC_TAB);
+                    return false; // don't send "f"
+                case KC_D:
+                    register_code(KC_LSFT);
+                    tap_code(KC_TAB);
+                    unregister_code(KC_LSFT);
+                    return false;
+                default:
+                    unregister_code(KC_LGUI);
+                    sw_app_active = false;
+                    break;
+            }
+        }
+    }
+    if (sw_win_active) {
+        if (record->event.pressed) {
+            switch (keycode) {
+                case KC_K:
+                    tap_code(KC_TAB);
+                    return false;
+                case KC_J:
+                    register_code(KC_LSFT);
+                    tap_code(KC_TAB);
+                    unregister_code(KC_LSFT);
+                    return false;
+                default:
+                    unregister_code(KC_LALT);
+                    sw_win_active = false;
+                    break;
+            }
+        }
+    }
+
+    /* if (!update_swapper(&sw_app_active, KC_LGUI, KC_TAB, SW_APP, keycode, record)) return false; // has update, stop process */
+    /* if (!update_swapper(&sw_win_active, KC_LALT, KC_TAB, SW_WIN, keycode, record)) return false; // has update, stop process */
     if (!process_record_num_word(NUMWORD, L_NUMBERS, keycode, record)) return false;
 
     switch (keycode) {
@@ -40,4 +85,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
     }
     return true;
+}
+
+void process_combo_event(uint16_t combo_index, bool pressed) {
+    switch (combo_index) {
+        case DF_SW_APP:
+            if (pressed) {
+                sw_app_active = true;
+                register_code(KC_LGUI);
+                tap_code(KC_TAB);
+            }
+            break;
+        case JK_SW_WIN:
+            if (pressed) {
+                sw_win_active = true;
+                register_code(KC_LALT);
+                tap_code(KC_TAB);
+            }
+            break;
+        default:
+            break;
+    }
 }

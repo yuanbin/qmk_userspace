@@ -30,6 +30,13 @@ enum layers {
     L_LAST
 };
 
+enum combos_events {
+    DF_SW_APP = 0,
+    JK_SW_WIN,
+    COMBO_LENGTH,
+};
+extern combo_t key_combos[COMBO_LENGTH];
+
 //clang-format off
 
 #define ZOOM_IN RCS(KC_EQUAL)
