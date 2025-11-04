@@ -53,84 +53,75 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [L_BASE] = LAYOUT_wrapper
-               (__BASE_L0__, _______, _______, __BASE_R0__,
-	              _______, __BASE_L1__, _______, _______, __BASE_R1__, _______,
-	              SW_APP, __BASE_L2__, _______, _______, __BASE_R2__, SW_WIN,
-	              _______, __BASE_3__, _______,
-	              _______, _______, _______, KC_MS_BTN1, STICKY_SHIFT_L_NUM, _______,
-	              _______, STICKY_SHIFT_L_NAV, QK_REP, _______, _______, _______,
-	              LT(1, KC_ENTER),    LT(5,KC_BSPC), _______, _______, LT(6, KC_TAB),      LT(2, KC_SPACE)
+               (__BASE_L0__, __EMPTY2__, __BASE_R0__,
+	              _______, __BASE_L1__, __EMPTY2__, __BASE_R1__, _______,
+                _______, __BASE_L2__, SW_APP, SW_WIN, __BASE_R2__, _______,
+                _______, __BASE_L3__, __BASE_R3__, _______,
+                __EMPTY4__, LT(L_NAV, KC_BSPC), __EMPTY2__, LT(L_NUM, KC_TAB), __EMPTY4__,
+                LT(L_SYMR, KC_ENTER), KC_BSPC, __EMPTY2__, KC_TAB, LT(L_SYML, KC_SPACE)
+	              ),
+  [L_SYML] = LAYOUT_wrapper
+               (__EMPTY14__,
+                _______, __SYML_L1__, _______, __EMPTY7__,
+                _______, __SYML_L2__, _______, _______, __HRM_RIGHT__, _______,
+                _______, __SYML_L3__, __EMPTY5__, _______,
+                __EMPTY4__, KC_DEL, __EMPTY7__,
+                CW_TOGG, KC_DEL, _______, __EMPTY3__
 	              ),
   [L_SYMR] = LAYOUT_wrapper
                (__EMPTY14__,
-                _______, _______, _______, TO(L_LAST), _______, _______, _______, _______, __SYMBOLS_R1__, _______,
-                _______, __HRM_LEFT__, _______, _______, __SYMBOLS_R2__, _______,
-                _______, __SYMR_3__, _______,
+                _______, __TO_LAST__, _______, _______, __SYMR_R1__, _______,
+                _______, __HRM_LEFT__, _______, _______, __SYMR_R2__, _______,
+                _______, __EMPTY5__, __SYMR_R3__, _______,
                 __EMPTY12__,
                 __EMPTY5__, KC_ESC
-	                 ),
-  [L_SYML] = LAYOUT_wrapper
-               (__EMPTY14__,
-                _______, __SYMBOLS_L1__, _______, __EMPTY7__,
-                _______, __SYMBOLS_L2__, _______, _______, __HRM_RIGHT__, _______,
-                _______, __SYML_3__, _______,
-                __EMPTY12__,
-                CW_TOGG, KC_DEL, _______, __EMPTY3__
-	                 ),
+	              ),
   [L_NUM] = LAYOUT_wrapper
-               (__EMPTY14__,
-                __EMPTY7__, _______, __NUMNAV_R1__, _______,
-                _______, __HRM_LEFT__, _______, _______, __NUMNAV_R2__, _______,
-                _______, __NUM_3__, _______,
-                __EMPTY6__, _______, KC_EQUAL, __EMPTY4__,
-                __EMPTY3__, _______, NUMWORD, LAR
-	                 ),
+              (__EMPTY14__,
+               _______, __NUM_L1__, __EMPTY8__,
+               _______, __NUM_L2__, __EMPTY2__, __HRM_RIGHT__, _______,
+               _______, __NUM_L3__,__EMPTY6__,
+               __EMPTY4__, NUMWORD, __EMPTY7__,
+               LAR, __EMPTY5__
+	             ),
   [L_NAV] = LAYOUT_wrapper
-               (__EMPTY14__,
-                _______, __NUMNAV_L1__, _______, __EMPTY7__,
-                _______, __NUMNAV_L2__, _______, _______, __HRM_RIGHT__, _______,
-                _______, __NAV_3__, _______,
-                __EMPTY12__,
-                __EMPTY6__
-	                 ),
-  [L_FNMAC] = LAYOUT_wrapper
-               (__EMPTY14__,
-                __EMPTY7__, _______, __FNMOUSE_R1__, _______,
-                _______, __HRM_LEFT__, _______, _______, __FNMOUSE_R2__, _______,
-                _______, __FNMAC_3__, _______,
-                __EMPTY12__,
-                __EMPTY4__, DM_PLY1, DM_PLY2
-	                 ),
-  [L_MOUSE] = LAYOUT_wrapper
-               (__EMPTY14__,
-                _______, __FNMOUSE_L1__, _______, __EMPTY7__,
-                _______, __FNMOUSE_L2__, _______, _______, __HRM_RIGHT__, _______,
-                _______, __MOUSE_3__, _______,
-                __EMPTY12__,
-                __EMPTY6__
+              (__EMPTY14__,
+               __EMPTY8__,__NAV_R1__,  _______,
+               _______,__HRM_LEFT__, __EMPTY2__, __NAV_R2__,  _______,
+               __EMPTY6__, __NAV_R3__,  _______,
+               __EMPTY7__, KC_PGUP, __EMPTY4__,
+               __EMPTY5__, KC_PGDN
+	             ),
+  [L_FNMOUSE] = LAYOUT_wrapper
+                  (__EMPTY14__,
+                   _______, __FNMOUSE_L1__, __EMPTY2__, __FNMOUSE_R1__, _______,
+                   _______, __FNMOUSE_L2__, __EMPTY2__, __FNMOUSE_R2__, _______,
+                   _______, __FNMOUSE_L3__, __FNMOUSE_R3__, _______,
+                   __EMPTY4__, DM_PLY1, __EMPTY7__,
+                   DM_PLY2, __EMPTY5__
 	                 ),
   [L_SYSMEDIA] = LAYOUT_wrapper
                    (__EMPTY14__,
-                    _______, __SYSMEDIA_L1__, _______, _______, MOON_LED_LEVEL, RGB_VAI, RGB_VAD, RGB_SAI, RGB_SAD , _______,
-	                  _______, __SYSMEDIA_L2__, _______, _______, _______, RGB_TOG, TOGGLE_LAYER_COLOR, RGB_MODE_FORWARD,  _______, _______,
-	                  _______, __SYSMEDIA_L3__, _______, RGB_HUI, RGB_HUD, RGB_SPI, RGB_SPD, _______,
-	                  __EMPTY12__,
+                    _______, RGB_SAD, RGB_SAI, RGB_VAD, RGB_VAI, MOON_LED_LEVEL, _______, _______, __SYSMEDIA_R1__, _______,
+                    _______, _______, RGB_MODE_FORWARD, TOGGLE_LAYER_COLOR, RGB_TOG, _______, _______, _______, __SYSMEDIA_R2__, _______,
+                    _______, RGB_SPD, RGB_SPI, RGB_HUD, RGB_HUI, _______, __SYSMEDIA_R3__, _______,
+                    __EMPTY12__,
                     KC_CAPS, QK_BOOT, _______, _______, QK_BOOT, KC_SYRQ
-	                 ),
+	                  ),
   [L_NUMBERS] = LAYOUT_wrapper
                   (__EMPTY14__,
                    _______, __NUMBERS_L1__, _______, _______, __NUMBERS_R1__, _______,
                    _______, __NUMBERS_L2__, _______, _______, __NUMBERS_R2__, _______,
-                   _______, __NUMBERS_3__, _______,
-                   __EMPTY6__, _______, KC_EQUAL, __EMPTY4__,
+                   _______, __NUMBERS_L3__, __EMPTY5__, _______,
+                   __EMPTY12__,
                    __EMPTY6__
 	                 ),
   [L_ONEHAND] = LAYOUT_wrapper
                   (__EMPTY14__,
                    _______, __ONEHAND_L1__, _______, _______, __ONEHAND_R1__, _______,
                    _______, __ONEHAND_L2__, _______, _______, __ONEHAND_R2__, _______,
-                   _______, __ONEHAND_3__, _______,
-                   __EMPTY12__,
-                   _______, TO(L_BASE), _______, __EMPTY3__
+                   _______, __ONEHAND_L3__, __ONEHAND_R3__, _______,
+                   __EMPTY4__, TO(L_BASE), __EMPTY7__,
+                   __EMPTY6__
 	                 ),
 };
