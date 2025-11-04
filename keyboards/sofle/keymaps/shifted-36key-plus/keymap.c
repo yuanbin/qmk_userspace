@@ -1,26 +1,26 @@
- /* Copyright 2020 Josef Adamcik
-  * Modification for VIA support and RGB underglow by Jens Bonk-Wiltfang
-  *
-  * This program is free software: you can redistribute it and/or modify
-  * it under the terms of the GNU General Public License as published by
-  * the Free Software Foundation, either version 2 of the License, or
-  * (at your option) any later version.
-  *
-  * This program is distributed in the hope that it will be useful,
-  * but WITHOUT ANY WARRANTY; without even the implied warranty of
-  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  * GNU General Public License for more details.
-  *
-  * You should have received a copy of the GNU General Public License
-  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
-  */
+/* Copyright 2020 Josef Adamcik
+ * Modification for VIA support and RGB underglow by Jens Bonk-Wiltfang
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 /* shifted one column out */
 
 #include "alias.h"
 #include "custom_process.h"
 
-#define LAYOUT_wrapper(...)   LAYOUT(__VA_ARGS__)
+#define LAYOUT_wrapper(...) LAYOUT(__VA_ARGS__)
 
 #define L_ONEHAND L_LAST
 
@@ -38,12 +38,11 @@
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [L_BASE] = { ENCODER_CCW_CW(KC_WH_U, KC_WH_D),         ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-    [L_SYMR] = { ENCODER_CCW_CW(KC_NO, KC_NO),             ENCODER_CCW_CW(A(S(KC_TAB)), A(KC_TAB))},
     [L_SYML] = { ENCODER_CCW_CW(C(S(KC_TAB)) , C(KC_TAB)), ENCODER_CCW_CW(KC_NO, KC_NO) },
+    [L_SYMR] = { ENCODER_CCW_CW(KC_NO, KC_NO),             ENCODER_CCW_CW(A(S(KC_TAB)), A(KC_TAB))},
     [L_NUM] =      { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO) },
     [L_NAV] =      { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO) },
-    [L_FNMAC] =    { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO) },
-    [L_MOUSE] =    { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO) },
+    [L_FNMOUSE] =    { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO) },
     [L_SYSMEDIA] = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO) },
     [L_NUMBERS] =  { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO) },
     [L_ONEHAND] =  { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO) }
@@ -95,48 +94,41 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               __BASE_L3__, __EMPTY4__, __BASE_R3__,
               MS_BTN1, __BASE_LT__, __EMPTY2__, __BASE_RT__, QK_REP
 	            ),
-[L_SYMR] = LAYOUT_wrapper
-             (__EMPTY12__,
-              _______, _______, TO(L_LAST), _______, _______, __EMPTY2__, __SYMBOLS_R1__,
-              __HRM_LEFT__, __EMPTY2__, __SYMBOLS_R2__,
-              __EMPTY9__, __SYMBOLS_R3__,
-              __EMPTY6__, __SYMBOLS_RT__, _______
-	            ),
 [L_SYML] = LAYOUT_wrapper
              (__EMPTY12__,
-              __SYMBOLS_L1__, __EMPTY7__,
-              __SYMBOLS_L2__, __EMPTY2__, __HRM_RIGHT__,
-              __SYMBOLS_L3__, __EMPTY9__,
-              _______, __SYMBOLS_LT__, __EMPTY6__
+              __SYML_L1__, __EMPTY7__,
+              __SYML_L2__, __EMPTY2__, __HRM_RIGHT__,
+              __SYML_L3__, __EMPTY9__,
+              _______, __SYML_LT__, __EMPTY6__
+	            ),
+[L_SYMR] = LAYOUT_wrapper
+             (__EMPTY12__,
+              __TO_LAST__, __EMPTY2__, __SYMR_R1__,
+              __HRM_LEFT__, __EMPTY2__, __SYMR_R2__,
+              __EMPTY9__, __SYMR_R3__,
+              __EMPTY6__, __SYMR_RT__, _______
 	            ),
 [L_NUM] = LAYOUT_wrapper
             (__EMPTY12__,
-             __EMPTY7__, __NUMNAV_R1__,
-             __HRM_LEFT__, __EMPTY2__, __NUMNAV_R2__,
-             __EMPTY9__, __NUMNAV_R3__,
-             __EMPTY6__, __NUMNAV_RT__, _______
+             __NUM_L1__, __EMPTY7__,
+             __NUM_L2__, __EMPTY2__, __HRM_RIGHT__,
+             __NUM_L3__,__EMPTY9__,
+             _______, __NUM_LT__, __EMPTY6__
 	           ),
 [L_NAV] = LAYOUT_wrapper
             (__EMPTY12__,
-             __NUMNAV_L1__, __EMPTY7__,
-             __NUMNAV_L2__, __EMPTY2__, __HRM_RIGHT__,
-             __NUMNAV_L3__, __EMPTY9__,
-             _______, __NUMNAV_LT__, __EMPTY6__
+             __EMPTY7__,__NAV_R1__,
+             __HRM_LEFT__, __EMPTY2__, __NAV_R2__,
+             __EMPTY9__, __NAV_R3__,
+             __EMPTY6__, __NAV_RT__, _______
 	           ),
-[L_FNMAC] = LAYOUT_wrapper
-              (__EMPTY12__,
-               __EMPTY7__, __FNMOUSE_R1__,
-               __HRM_LEFT__, __EMPTY2__, __FNMOUSE_R2__,
-               __EMPTY9__, __FNMOUSE_R3__,
-               __EMPTY6__, __FNMOUSE_RT__, _______
-	             ),
-[L_MOUSE] = LAYOUT_wrapper
-              (__EMPTY12__,
-               __FNMOUSE_L1__, __EMPTY7__,
-               __FNMOUSE_L2__, __EMPTY2__, __HRM_RIGHT__,
-               __FNMOUSE_L3__, __EMPTY9__,
-               _______, __FNMOUSE_LT__, __EMPTY6__
-	             ),
+[L_FNMOUSE] = LAYOUT_wrapper
+                (__EMPTY12__,
+                 __FNMOUSE_L1__, __EMPTY2__, __FNMOUSE_R1__,
+                 __FNMOUSE_L2__, __EMPTY2__, __FNMOUSE_R2__,
+                 __FNMOUSE_L3__, __EMPTY4__, __FNMOUSE_R3__,
+                 _______, __FNMOUSE_LT__, __EMPTY2__, __FNMOUSE_RT__, _______
+	               ),
 [L_SYSMEDIA] = LAYOUT_wrapper
                  (__EMPTY12__,
                   __SYSMEDIA_L1__, __EMPTY2__, __SYSMEDIA_R1__,
