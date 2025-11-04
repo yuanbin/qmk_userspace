@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [L_BASE] = LAYOUT_wrapper
                (__BASE_L0__, __EMPTY2__, __BASE_R0__,
 	              _______, __BASE_L1__, __EMPTY2__, __BASE_R1__, _______,
-                _______, __BASE_L2__, SW_APP, SW_WIN, __BASE_R2__, _______,
+                _______, __BASE_L2__, __EMPTY2__, __BASE_R2__, _______,
                 _______, __BASE_L3__, __BASE_R3__, _______,
                 __EMPTY4__, LT(L_NAV, KC_BSPC), __EMPTY2__, LT(L_NUM, KC_TAB), __EMPTY4__,
                 LT(L_SYMR, KC_ENTER), KC_BSPC, __EMPTY2__, KC_TAB, LT(L_SYML, KC_SPACE)

@@ -29,10 +29,10 @@ enum layers {
     L_LAST
 };
 
-#if 0
+#if 1
 enum combos_events {
-    DF_SW_APP = 0,
-    JK_SW_WIN,
+    CV_SW_APP = 0,
+    MC_SW_WIN,
     COMBO_LENGTH,
 };
 extern combo_t key_combos[COMBO_LENGTH];
