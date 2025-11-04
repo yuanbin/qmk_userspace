@@ -1,0 +1,1 @@
+../36key-plus/rules.mk
