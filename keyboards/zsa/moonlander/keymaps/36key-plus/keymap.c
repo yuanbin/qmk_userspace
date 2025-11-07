@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	              ),
   [L_SYMR] = LAYOUT_wrapper
                (__EMPTY14__,
-                _______, __TO_LAST__, _______, _______, __SYMR_R1__, _______,
+                __EMPTY8__, __SYMR_R1__, _______,
                 _______, __HRM_LEFT__, _______, _______, __SYMR_R2__, _______,
                 _______, __EMPTY5__, __SYMR_R3__, _______,
                 __EMPTY12__,

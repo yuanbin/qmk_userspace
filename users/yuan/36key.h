@@ -36,6 +36,7 @@ enum combos_events {
     CV,
     MC,
     QW,
+    ZX,
     COMBO_LENGTH,
 };
 extern combo_t key_combos[COMBO_LENGTH];
@@ -83,7 +84,7 @@ extern combo_t key_combos[COMBO_LENGTH];
 #define __BASE_R3__ KC_N,                 KC_M,                       KC_COMMA,                  KC_DOT,             KC_SLASH
 #define __BASE_RT__ KC_TAB,               LT(L_SYML, KC_SPACE),       LT(L_NUM, KC_TAB)
 
-#define __TO_LAST__ _______, _______, TO(L_LAST), _______, _______
+// #define __TO_LAST__ _______, _______, TO(L_LAST), _______, _______
 
 #define __SYML_L1__ KC_AT,             KC_LABK,        KC_RABK,        KC_HASH,        KC_PERC
 #define __SYML_L2__ KC_EXLM,           KC_MINUS,       KC_PLUS,        KC_EQUAL,       KC_DQUO
@@ -135,10 +136,10 @@ extern combo_t key_combos[COMBO_LENGTH];
 #define __NUMBERS_R3__ __EMPTY5__
 #define __NUMBERS_RT__ __EMPTY3__
 
-#define __ONEHAND_L1__ KC_WWW_FORWARD, KC_PGUP, KC_WH_U, KC_PGDN,  ZOOM_RESET
-#define __ONEHAND_L2__ KC_WWW_BACK,    KC_BTN3, KC_BTN2, KC_BTN1, ZOOM_IN
-#define __ONEHAND_L3__ KC_WWW_HOME,    KC_HOME, KC_WH_D, KC_END, ZOOM_OUT
-#define __ONEHAND_LT__ TO(L_BASE),     _______, _______
+#define __ONEHAND_L1__ KC_WWW_FORWARD, KC_WH_U, KC_WH_D, KC_HOME,  ZOOM_RESET
+#define __ONEHAND_L2__ KC_WWW_BACK,    KC_BTN2, KC_BTN1, KC_BTN3, ZOOM_IN
+#define __ONEHAND_L3__ KC_WWW_HOME,    KC_PGUP, KC_PGDN, KC_END, ZOOM_OUT
+#define __ONEHAND_LT__ __EMPTY3__
 
 #define __ONEHAND_R1__ __EMPTY5__
 #define __ONEHAND_R2__ __EMPTY5__

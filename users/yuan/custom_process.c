@@ -6,6 +6,7 @@ const uint16_t PROGMEM combo_kl[] = {HRM_K, HRM_L, COMBO_END};
 const uint16_t PROGMEM combo_cv[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM combo_mc[] = {KC_M, KC_COMMA, COMBO_END};
 const uint16_t PROGMEM combo_qw[] = {KC_Q, LSA_T(KC_W), COMBO_END};
+const uint16_t PROGMEM combo_zx[] = {KC_Z, KC_X, COMBO_END};
 
 combo_t key_combos[COMBO_LENGTH] = {
   [SD] = COMBO(combo_sd, 0),
@@ -13,6 +14,7 @@ combo_t key_combos[COMBO_LENGTH] = {
   [CV] = COMBO(combo_cv, CW_TOGG),
   [MC] = COMBO(combo_mc, 0),
   [QW] = COMBO(combo_qw, KC_ESC),
+  [ZX] = COMBO(combo_zx, 0),
 };
 #endif
 
@@ -37,6 +39,13 @@ static const uint16_t num_keys[] = {
   KC_ASTR,
   KC_SLASH,
   KC_BSPC
+};
+
+static bool onehand_layer_active = false;
+static const uint16_t onehand_keys[] = {
+  KC_WWW_FORWARD, KC_WH_U, KC_WH_D, KC_HOME,  ZOOM_RESET,
+  KC_WWW_BACK,    KC_BTN2, KC_BTN1, KC_BTN3, ZOOM_IN,
+  KC_WWW_HOME,    KC_PGUP, KC_PGDN, KC_END, ZOOM_OUT
 };
 
 static uint16_t sticky_timer  = 0;
@@ -127,6 +136,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     /* if (!update_swapper(&sw_win_active, KC_LALT, KC_TAB, SW_WIN, keycode, record)) return false; // has update, stop process */
     /* if (!process_record_num_word(NUMWORD, L_NUMBERS, keycode, record)) return false; */
     process_smart_layer(L_NUMBERS, &num_layer_active, num_keys, sizeof(num_keys), keycode, record);
+    process_smart_layer(L_LAST, &onehand_layer_active, onehand_keys, sizeof(onehand_keys), keycode, record);
 
     switch (keycode) {
     case ST_MACRO_HOME_DIR:
@@ -171,6 +181,14 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
       if (!num_layer_active) {
         num_layer_active = true;
         layer_on(L_NUMBERS);
+      }
+    }
+    break;
+  case ZX:
+    if (pressed) {
+      if (!onehand_layer_active) {
+        onehand_layer_active = true;
+        layer_on(L_LAST);
       }
     }
     break;
