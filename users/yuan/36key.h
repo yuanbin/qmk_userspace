@@ -139,7 +139,7 @@ extern combo_t key_combos[COMBO_LENGTH];
 #define __ONEHAND_L1__ KC_WWW_FORWARD, KC_WH_U, KC_WH_D, KC_HOME,  ZOOM_RESET
 #define __ONEHAND_L2__ KC_WWW_BACK,    KC_BTN2, KC_BTN1, KC_BTN3, ZOOM_IN
 #define __ONEHAND_L3__ KC_WWW_HOME,    KC_PGUP, KC_PGDN, KC_END, ZOOM_OUT
-#define __ONEHAND_LT__ __EMPTY3__
+#define __ONEHAND_LT__ _______,        KC_NO,    _______
 
 #define __ONEHAND_R1__ __EMPTY5__
 #define __ONEHAND_R2__ __EMPTY5__
