@@ -1,15 +1,15 @@
 #include "custom_process.h"
 
 #if 1
-const uint16_t PROGMEM combo_df[] = {HRM_D, HRM_F, COMBO_END};
-const uint16_t PROGMEM combo_jk[] = {HRM_J, HRM_K, COMBO_END};
+const uint16_t PROGMEM combo_sd[] = {HRM_S, HRM_D, COMBO_END};
+const uint16_t PROGMEM combo_kl[] = {HRM_K, HRM_L, COMBO_END};
 const uint16_t PROGMEM combo_cv[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM combo_mc[] = {KC_M, KC_COMMA, COMBO_END};
 const uint16_t PROGMEM combo_qw[] = {KC_Q, LSA_T(KC_W), COMBO_END};
 
 combo_t key_combos[COMBO_LENGTH] = {
-  [DF] = COMBO(combo_df, 0),
-  [JK] = COMBO(combo_jk, 0),
+  [SD] = COMBO(combo_sd, 0),
+  [KL] = COMBO(combo_kl, 0),
   [CV] = COMBO(combo_cv, CW_TOGG),
   [MC] = COMBO(combo_mc, 0),
   [QW] = COMBO(combo_qw, KC_ESC),
@@ -57,10 +57,10 @@ bool process_combo_swapper(uint16_t keycode, keyrecord_t *record) {
   if (sw_app_active) {
     if (record->event.pressed) {
       switch (keycode) {
-      case HRM_F:
+      case HRM_D:
         tap_code(KC_TAB);
         return false; // don't send "f"
-      case HRM_D:
+      case HRM_S:
         register_code(KC_LSFT);
         tap_code(KC_TAB);
         unregister_code(KC_LSFT);
@@ -75,10 +75,10 @@ bool process_combo_swapper(uint16_t keycode, keyrecord_t *record) {
   if (sw_win_active) {
     if (record->event.pressed) {
       switch (keycode) {
-      case HRM_K:
+      case HRM_L:
         tap_code(KC_TAB);
         return false;
-      case HRM_J:
+      case HRM_K:
         register_code(KC_LSFT);
         tap_code(KC_TAB);
         unregister_code(KC_LSFT);
@@ -152,14 +152,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #if 1
 void process_combo_event(uint16_t combo_index, bool pressed) {
   switch (combo_index) {
-  case DF:
+  case SD:
     if (pressed) {
       sw_app_active = true;
       register_code(KC_LGUI);
       tap_code(KC_TAB);
     }
     break;
-  case JK:
+  case KL:
     if (pressed) {
       sw_win_active = true;
       register_code(KC_LALT);

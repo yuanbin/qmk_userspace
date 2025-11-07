@@ -31,8 +31,8 @@ enum layers {
 
 #if 1
 enum combos_events {
-    DF = 0,
-    JK,
+    SD = 0,
+    KL,
     CV,
     MC,
     QW,
@@ -98,7 +98,7 @@ extern combo_t key_combos[COMBO_LENGTH];
 #define __NUM_L1__ KC_ASTR,  KC_9, KC_8, KC_7, KC_PLUS
 #define __NUM_L2__ KC_DOT,   KC_6, KC_5, KC_4, KC_MINUS
 #define __NUM_L3__ KC_SLASH, KC_3, KC_2, KC_1, KC_0
-#define __NUM_LT__ NUMWORD,  LAR,  _______
+#define __NUM_LT__  _______,  LAR,  _______
 
 #define __NAV_R1__ ZOOM_OUT,   ZOOM_IN,     KC_END, KC_HOME,        KC_WWW_FORWARD
 #define __NAV_R2__ KC_LEFT,    KC_DOWN,     KC_UP,  KC_RIGHT,       KC_WWW_BACK
