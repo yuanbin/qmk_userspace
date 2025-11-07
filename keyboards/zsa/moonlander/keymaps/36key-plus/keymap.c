@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 _______, __SYML_L2__, _______, _______, __HRM_RIGHT__, _______,
                 _______, __SYML_L3__, __EMPTY5__, _______,
                 __EMPTY4__, KC_DEL, __EMPTY7__,
-                CW_TOGG, KC_DEL, _______, __EMPTY3__
+                _______, KC_DEL, _______, __EMPTY3__
 	              ),
   [L_SYMR] = LAYOUT_wrapper
                (__EMPTY14__,
@@ -74,14 +74,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 _______, __HRM_LEFT__, _______, _______, __SYMR_R2__, _______,
                 _______, __EMPTY5__, __SYMR_R3__, _______,
                 __EMPTY12__,
-                __EMPTY5__, KC_ESC
+                __EMPTY6__
 	              ),
   [L_NUM] = LAYOUT_wrapper
               (__EMPTY14__,
                _______, __NUM_L1__, __EMPTY8__,
                _______, __NUM_L2__, __EMPTY2__, __HRM_RIGHT__, _______,
                _______, __NUM_L3__,__EMPTY6__,
-               __EMPTY4__, NUMWORD, __EMPTY7__,
+               __EMPTY4__, _______, __EMPTY7__,
                LAR, __EMPTY5__
 	             ),
   [L_NAV] = LAYOUT_wrapper
@@ -121,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                    _______, __ONEHAND_L1__, _______, _______, __ONEHAND_R1__, _______,
                    _______, __ONEHAND_L2__, _______, _______, __ONEHAND_R2__, _______,
                    _______, __ONEHAND_L3__, __ONEHAND_R3__, _______,
-                   __EMPTY4__, TO(L_BASE), __EMPTY7__,
+                   __EMPTY4__, KC_NO, __EMPTY7__,
                    __EMPTY6__
 	                 ),
 };
