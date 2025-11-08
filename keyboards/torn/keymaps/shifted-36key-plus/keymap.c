@@ -61,9 +61,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 */
 
 [L_BASE] = LAYOUT_wrapper
-             (__BASE_L1__, MS_BTN1, _______, __BASE_R1__,
-              __BASE_L2__, SW_APP, SW_WIN, __BASE_R2__,
-              __BASE_L3__, __EMPTY2__, __BASE_R3__,
+             (__BASE_L1__, MS_BTN3, _______, __BASE_R1__,
+              __BASE_L2__, MS_BTN1, _______, __BASE_R2__,
+              __BASE_L3__, MS_BTN2, _______, __BASE_R3__,
               __BASE_LT__, __EMPTY2__, __BASE_RT__
 	            ),
 [L_SYML] = LAYOUT_wrapper
@@ -73,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               __SYML_LT__, __EMPTY5__
 	            ),
 [L_SYMR] = LAYOUT_wrapper
-             (__TO_LAST__, __EMPTY2__, __SYMR_R1__,
+             (__EMPTY7__, __SYMR_R1__,
               __HRM_LEFT__, __EMPTY2__, __SYMR_R2__,
               __EMPTY7__, __SYMR_R3__,
               __EMPTY5__,   __SYMR_RT__

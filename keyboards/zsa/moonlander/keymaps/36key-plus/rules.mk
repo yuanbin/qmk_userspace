@@ -1,1 +1,3 @@
 USER_NAME = yuan
+
+DYNAMIC_MACRO_ENABLE = yes

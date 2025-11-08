@@ -31,8 +31,8 @@ enum layers {
 
 #if 1
 enum combos_events {
-    SD = 0,
-    KL,
+    DF = 0,
+    JK,
     CV,
     MC,
     QW,

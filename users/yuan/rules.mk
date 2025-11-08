@@ -11,11 +11,11 @@ COMBO_ENABLE = yes
 # RGBLIGHT_ENABLE = no        # Enable WS2812 RGB underlight.
 # SWAP_HANDS_ENABLE = no      # Enable one-hand typing
 # OLED_ENABLE = no           # OLED display
-DYNAMIC_MACRO_ENABLE = yes
+# DYNAMIC_MACRO_ENABLE = yes
 # VIA_ENABLE = yes
 # RGB_MATRIX_ENABLE = yes
 # ENCODER_MAP_ENABLE = no
 CAPS_WORD_ENABLE = yes
-REPEAT_KEY_ENABLE = yes
+# REPEAT_KEY_ENABLE = no
 
 SRC += custom_process.c num_word.c swapper.c
