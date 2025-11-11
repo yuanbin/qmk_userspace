@@ -5,16 +5,18 @@
 #include "quantum.h"
 #include "version.h"
 
+#include "alias.h"
+
 #define MACRO_DELAY 20
 
 enum custom_keycodes {
     SW_APP = SAFE_RANGE,  // Switch to next window         (alt-tab)
-    SW_WIN,
+    /* SW_WIN, */
     NUMWORD,
     ST_MACRO_HOME_DIR,
     ST_MACRO_PAREN_DIR,
-    STICKY_SHIFT_L_NUM,
-    STICKY_SHIFT_L_NAV,
+    /* STICKY_SHIFT_L_NUM, */
+    /* STICKY_SHIFT_L_NAV, */
 };
 
 enum layers {
@@ -25,15 +27,16 @@ enum layers {
     L_NAV,
     L_FNMOUSE,
     L_SYSMEDIA,
-    L_NUMBERS,
+    /* L_NUMBERS, */
     L_LAST
 };
 
-#if 1
+#ifdef COMBO_ENABLE
 enum combos_events {
-    DF = 0,
-    JK,
+    /* DF = 0, */
+    JK = 0,
     CV,
+    XC,
     MC,
     QW,
     ZX,
@@ -96,9 +99,9 @@ extern combo_t key_combos[COMBO_LENGTH];
 #define __SYMR_R3__ KC_TILD,           KC_DLR,         KC_LBRC,        KC_RBRC,        ST_MACRO_PAREN_DIR
 #define __SYMR_RT__ __EMPTY3__
 
-#define __NUM_L1__ KC_ASTR,  KC_9, KC_8, KC_7, KC_PLUS
-#define __NUM_L2__ KC_DOT,   KC_6, KC_5, KC_4, KC_MINUS
-#define __NUM_L3__ KC_SLASH, KC_3, KC_2, KC_1, KC_0
+#define __NUM_L1__ KC_ASTR, KC_7, KC_8, KC_9, KC_PLUS
+#define __NUM_L2__ KC_DOT,  KC_4, KC_5, KC_6, KC_MINUS
+#define __NUM_L3__ KC_0,    KC_1, KC_2, KC_3, KC_SLASH
 #define __NUM_LT__  _______,  LAR,  _______
 
 #define __NAV_R1__ ZOOM_OUT,   ZOOM_IN,     KC_END, KC_HOME,        KC_WWW_FORWARD
@@ -111,9 +114,9 @@ extern combo_t key_combos[COMBO_LENGTH];
 #define __FNMOUSE_L3__ DM_REC1, KC_F3,   KC_F2,  KC_F1, KC_F10
 #define __FNMOUSE_LT__ DM_PLY1, DM_PLY2, _______
 
-#define __FNMOUSE_R1__ ZOOM_OUT,      ZOOM_IN,       KC_MS_BTN1,  KC_MS_BTN2,     KC_WWW_FORWARD
-#define __FNMOUSE_R2__ KC_MS_LEFT,    KC_MS_DOWN,    KC_MS_UP,    KC_MS_RIGHT,    KC_WWW_BACK
-#define __FNMOUSE_R3__ KC_MS_WH_LEFT, KC_MS_WH_DOWN, KC_MS_WH_UP, KC_MS_WH_RIGHT, KC_WWW_HOME
+#define __FNMOUSE_R1__ ZOOM_OUT, ZOOM_IN, MS_BTN1, MS_BTN2,  KC_WWW_FORWARD
+#define __FNMOUSE_R2__ MS_LEFT,  MS_DOWN, MS_UP,   MS_RGHT,  KC_WWW_BACK
+#define __FNMOUSE_R3__ MS_WHLL,  MS_WHLD, MS_WHLU, MS_WHLR,  KC_WWW_HOME
 #define __FNMOUSE_RT__ __EMPTY3__
 
 #define __SYSMEDIA_L1__ __EMPTY5__
@@ -136,9 +139,9 @@ extern combo_t key_combos[COMBO_LENGTH];
 #define __NUMBERS_R3__ __EMPTY5__
 #define __NUMBERS_RT__ __EMPTY3__
 
-#define __ONEHAND_L1__ KC_WWW_FORWARD, KC_WH_U, KC_WH_D, KC_HOME,  ZOOM_RESET
-#define __ONEHAND_L2__ KC_WWW_BACK,    KC_BTN2, KC_BTN1, KC_BTN3, ZOOM_IN
-#define __ONEHAND_L3__ KC_WWW_HOME,    KC_PGUP, KC_PGDN, KC_END, ZOOM_OUT
+#define __ONEHAND_L1__ KC_WWW_FORWARD, MS_WHLU, MS_WHLD, KC_HOME, ZOOM_RESET
+#define __ONEHAND_L2__ KC_WWW_BACK,    MS_BTN2, MS_BTN1, MS_BTN3, ZOOM_IN
+#define __ONEHAND_L3__ KC_WWW_HOME,    KC_PGUP, KC_PGDN, KC_END,  ZOOM_OUT
 #define __ONEHAND_LT__ _______,        KC_NO,    _______
 
 #define __ONEHAND_R1__ __EMPTY5__
@@ -147,13 +150,13 @@ extern combo_t key_combos[COMBO_LENGTH];
 #define __ONEHAND_RT__ __EMPTY3__
 
 #define __AUTOMOUSE_L1__ KC_WWW_FORWARD, KC_NO,      KC_NO,      KC_NO,      KC_NO
-#define __AUTOMOUSE_L2__ KC_WWW_BACK,    KC_MS_BTN2, SCRL_MO,    KC_MS_BTN1, ZOOM_IN
-#define __AUTOMOUSE_L3__ ZOOM_RESET,     KC_HOME,    KC_MS_BTN3, KC_END,     ZOOM_OUT
+#define __AUTOMOUSE_L2__ KC_WWW_BACK,    MS_BTN2,    SCRL_MO,    MS_BTN1,    ZOOM_IN
+#define __AUTOMOUSE_L3__ ZOOM_RESET,     KC_HOME,    MS_BTN3,    KC_END,     ZOOM_OUT
 #define __AUTOMOUSE_LT__ TO(L_BASE),     KC_NO,      KC_NO
 
 #define __AUTOMOUSE_R1__ KC_NO,          KC_NO,      KC_NO,      KC_NO,      KC_WWW_FORWARD
-#define __AUTOMOUSE_R2__ ZOOM_IN,        KC_MS_BTN1, SCRL_MO,    KC_MS_BTN2, KC_WWW_BACK
-#define __AUTOMOUSE_R3__ ZOOM_OUT,       KC_END,     KC_MS_BTN3, KC_HOME,    ZOOM_RESET
+#define __AUTOMOUSE_R2__ ZOOM_IN,        MS_BTN1,    SCRL_MO,    MS_BTN2,    KC_WWW_BACK
+#define __AUTOMOUSE_R3__ ZOOM_OUT,       KC_END,     MS_BTN3,    KC_HOME,    ZOOM_RESET
 #define __AUTOMOUSE_RT__ KC_NO,          KC_NO,      KC_NO
 
 // clang-format on

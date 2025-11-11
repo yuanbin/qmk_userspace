@@ -18,7 +18,6 @@
 
 // compile with firmware24
 
-//#include "alias.h"
 #include "custom_process.h"
 
 #define MOON_LED_LEVEL LED_LEVEL
@@ -108,14 +107,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     __EMPTY12__,
                     KC_CAPS, QK_BOOT, _______, _______, QK_BOOT, KC_SYRQ
 	                  ),
-  [L_NUMBERS] = LAYOUT_wrapper
-                  (__EMPTY14__,
-                   _______, __NUMBERS_L1__, _______, _______, __NUMBERS_R1__, _______,
-                   _______, __NUMBERS_L2__, _______, _______, __NUMBERS_R2__, _______,
-                   _______, __NUMBERS_L3__, __EMPTY5__, _______,
-                   __EMPTY12__,
-                   __EMPTY6__
-	                 ),
+  /* [L_NUMBERS] = LAYOUT_wrapper */
+  /*                 (__EMPTY14__, */
+  /*                  _______, __NUMBERS_L1__, _______, _______, __NUMBERS_R1__, _______, */
+  /*                  _______, __NUMBERS_L2__, _______, _______, __NUMBERS_R2__, _______, */
+  /*                  _______, __NUMBERS_L3__, __EMPTY5__, _______, */
+  /*                  __EMPTY12__, */
+  /*                  __EMPTY6__ */
+	/*                  ), */
   [L_ONEHAND] = LAYOUT_wrapper
                   (__EMPTY14__,
                    _______, __ONEHAND_L1__, _______, _______, __ONEHAND_R1__, _______,

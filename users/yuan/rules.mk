@@ -1,7 +1,7 @@
 LTO_ENABLE = yes            # Link Time Optimization enabled
 # BOOTMAGIC_ENABLE = no       # Enable Bootmagic Lite
 MOUSEKEY_ENABLE = yes        # Mouse keys
-COMBO_ENABLE = yes
+# COMBO_ENABLE = yes
 # EXTRAKEY_ENABLE = yes        # Audio control and System control
 # CONSOLE_ENABLE = no         # Console for debug
 # COMMAND_ENABLE = no         # Commands for debug and configuration
@@ -18,4 +18,4 @@ COMBO_ENABLE = yes
 CAPS_WORD_ENABLE = yes
 # REPEAT_KEY_ENABLE = no
 
-SRC += custom_process.c num_word.c swapper.c
+SRC += custom_process.c # num_word.c swapper.c

@@ -17,7 +17,7 @@
 
 /* shifted one column out */
 
-#include "alias.h"
+/* #include "alias.h" */
 #include "custom_process.h"
 
 #define LAYOUT_wrapper(...) LAYOUT(__VA_ARGS__)
@@ -37,14 +37,14 @@
 
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-    [L_BASE] = { ENCODER_CCW_CW(KC_WH_U, KC_WH_D),         ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [L_BASE] = { ENCODER_CCW_CW(MS_WHLU, MS_WHLD),         ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [L_SYML] = { ENCODER_CCW_CW(C(S(KC_TAB)) , C(KC_TAB)), ENCODER_CCW_CW(KC_NO, KC_NO) },
     [L_SYMR] = { ENCODER_CCW_CW(KC_NO, KC_NO),             ENCODER_CCW_CW(A(S(KC_TAB)), A(KC_TAB))},
     [L_NUM] =      { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO) },
     [L_NAV] =      { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO) },
     [L_FNMOUSE] =    { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO) },
     [L_SYSMEDIA] = { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO) },
-    [L_NUMBERS] =  { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO) },
+    /* [L_NUMBERS] =  { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO) }, */
     [L_ONEHAND] =  { ENCODER_CCW_CW(KC_NO, KC_NO), ENCODER_CCW_CW(KC_NO, KC_NO) }
 };
 #endif
@@ -58,8 +58,8 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
 	      'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R'
 	);
 
-#define __BASE_L0__ KC_MS_BTN2,    KC_MS_BTN1,        KC_MS_BTN3,      ZOOM_IN,    ZOOM_OUT,   ZOOM_RESET
-#define __BASE_R0__ KC_AUDIO_MUTE, KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP, KC_MS_BTN3, KC_MS_BTN1, KC_MS_BTN2
+#define __BASE_L0__ MS_BTN2,       MS_BTN1,           MS_BTN3,         ZOOM_IN,    ZOOM_OUT,   ZOOM_RESET
+#define __BASE_R0__ KC_AUDIO_MUTE, KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP, MS_BTN3,    MS_BTN1,    MS_BTN2
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -136,13 +136,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   __SYSMEDIA_L3__, __EMPTY4__, __SYSMEDIA_R3__,
                   _______, __SYSMEDIA_LT__,  __EMPTY2__, __SYSMEDIA_RT__, _______
 	                ),
-[L_NUMBERS] = LAYOUT_wrapper
-                (__EMPTY12__,
-                 __NUMBERS_L1__, __EMPTY2__, __NUMBERS_R1__,
-                 __NUMBERS_L2__, __EMPTY2__, __NUMBERS_R2__,
-                 __NUMBERS_L3__, __EMPTY4__, __NUMBERS_R3__,
-                 _______, __NUMBERS_LT__,  __EMPTY2__, __NUMBERS_RT__, _______
-	               ),
+/* [L_NUMBERS] = LAYOUT_wrapper */
+/*                 (__EMPTY12__, */
+/*                  __NUMBERS_L1__, __EMPTY2__, __NUMBERS_R1__, */
+/*                  __NUMBERS_L2__, __EMPTY2__, __NUMBERS_R2__, */
+/*                  __NUMBERS_L3__, __EMPTY4__, __NUMBERS_R3__, */
+/*                  _______, __NUMBERS_LT__,  __EMPTY2__, __NUMBERS_RT__, _______ */
+/* 	               ), */
 [L_ONEHAND] = LAYOUT_wrapper
                 (__EMPTY12__,
                  __ONEHAND_L1__, __EMPTY2__, __ONEHAND_R1__,

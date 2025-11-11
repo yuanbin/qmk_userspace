@@ -1,2 +1,8 @@
-OLED_ENABLE = no           # NOTE: disable OLED if DYN_MACRO is enabled
 USER_NAME = yuan
+
+OLED_ENABLE = no           # NOTE: disable OLED if DYN_MACRO is enabled
+CONSOLE_ENABLE = no
+EXTRAKEY_ENABLE = no
+
+COMBO_ENABLE = yes
+DYNAMIC_MACRO_ENABLE = yes

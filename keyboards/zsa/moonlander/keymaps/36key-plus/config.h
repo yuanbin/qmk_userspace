@@ -1,1 +1,2 @@
 #define IS_SPLIT_KEYBOARD
+#define USE_OLD_MS_KEYCODE

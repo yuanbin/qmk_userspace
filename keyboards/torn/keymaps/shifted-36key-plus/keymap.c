@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "alias.h"
+/* #include "alias.h" */
 #include "custom_process.h"
 
 #define LAYOUT_wrapper(...) LAYOUT_split_3x6_4(__VA_ARGS__)
@@ -102,12 +102,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   __SYSMEDIA_L3__, __EMPTY2__, __SYSMEDIA_R3__,
                   __SYSMEDIA_LT__,  __EMPTY2__, __SYSMEDIA_RT__
 	                ),
-[L_NUMBERS] = LAYOUT_wrapper
-                (__NUMBERS_L1__, __EMPTY2__, __NUMBERS_R1__,
-                 __NUMBERS_L2__, __EMPTY2__, __NUMBERS_R2__,
-                 __NUMBERS_L3__, __EMPTY2__, __NUMBERS_R3__,
-                 __NUMBERS_LT__,  __EMPTY2__, __NUMBERS_RT__
-	               ),
+/* [L_NUMBERS] = LAYOUT_wrapper */
+/*                 (__NUMBERS_L1__, __EMPTY2__, __NUMBERS_R1__, */
+/*                  __NUMBERS_L2__, __EMPTY2__, __NUMBERS_R2__, */
+/*                  __NUMBERS_L3__, __EMPTY2__, __NUMBERS_R3__, */
+/*                  __NUMBERS_LT__,  __EMPTY2__, __NUMBERS_RT__ */
+/* 	               ), */
 [L_ONEHAND] = LAYOUT_wrapper
                 (__ONEHAND_L1__, __EMPTY2__, __ONEHAND_R1__,
                  __ONEHAND_L2__, __EMPTY2__, __ONEHAND_R2__,
@@ -120,6 +120,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     torn_set_led(0, IS_LAYER_ON_STATE(state, L_ONEHAND));
-    torn_set_led(1, IS_LAYER_ON_STATE(state, L_NUMBERS));
+    /* torn_set_led(1, IS_LAYER_ON_STATE(state, L_NUMBERS)); */
     return state;
 }
