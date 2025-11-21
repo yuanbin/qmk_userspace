@@ -109,9 +109,9 @@ extern combo_t key_combos[COMBO_LENGTH];
 #define __NAV_R3__ __EMPTY4__, KC_WWW_HOME
 #define __NAV_RT__ _______,    KC_PGDN,     KC_PGUP
 
-#define __FNMOUSE_L1__ DM_RSTP, KC_F9,   KC_F8,  KC_F7, KC_F12
-#define __FNMOUSE_L2__ DM_REC2, KC_F6,   KC_F5,  KC_F4, KC_F11
-#define __FNMOUSE_L3__ DM_REC1, KC_F3,   KC_F2,  KC_F1, KC_F10
+#define __FNMOUSE_L1__ DM_RSTP, KC_F7,   KC_F8,  KC_F9, KC_F12
+#define __FNMOUSE_L2__ DM_REC2, KC_F4,   KC_F5,  KC_F6, KC_F11
+#define __FNMOUSE_L3__ DM_REC1, KC_F1,   KC_F2,  KC_F3, KC_F10
 #define __FNMOUSE_LT__ DM_PLY1, DM_PLY2, _______
 
 #define __FNMOUSE_R1__ ZOOM_OUT, ZOOM_IN, MS_BTN1, MS_BTN2,  KC_WWW_FORWARD
