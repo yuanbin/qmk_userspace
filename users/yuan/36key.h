@@ -100,14 +100,14 @@ extern combo_t key_combos[COMBO_LENGTH];
 #define __SYMR_RT__ __EMPTY3__
 
 #define __NUM_L1__ KC_ASTR, KC_7, KC_8, KC_9, KC_PLUS
-#define __NUM_L2__ KC_DOT,  KC_4, KC_5, KC_6, KC_MINUS
-#define __NUM_L3__ KC_0,    KC_1, KC_2, KC_3, KC_SLASH
+#define __NUM_L2__ KC_0,  KC_4, KC_5, KC_6, KC_DOT
+#define __NUM_L3__ KC_SLASH,    KC_1, KC_2, KC_3, KC_MINUS
 #define __NUM_LT__  _______,  LAR,  _______
 
-#define __NAV_R1__ ZOOM_OUT,   ZOOM_IN,     KC_END, KC_HOME,        KC_WWW_FORWARD
-#define __NAV_R2__ KC_LEFT,    KC_DOWN,     KC_UP,  KC_RIGHT,       KC_WWW_BACK
-#define __NAV_R3__ __EMPTY4__, KC_WWW_HOME
-#define __NAV_RT__ _______,    KC_PGDN,     KC_PGUP
+#define __NAV_R1__ ZOOM_OUT, ZOOM_IN, _______, _______,  KC_WWW_FORWARD
+#define __NAV_R2__ KC_LEFT,  KC_DOWN, KC_UP,   KC_RIGHT, KC_WWW_BACK
+#define __NAV_R3__ KC_END,   KC_PGDN, KC_PGUP, KC_HOME,  ZOOM_RESET
+#define __NAV_RT__ __EMPTY3__
 
 #define __FNMOUSE_L1__ DM_RSTP, KC_F7,   KC_F8,  KC_F9, KC_F12
 #define __FNMOUSE_L2__ DM_REC2, KC_F4,   KC_F5,  KC_F6, KC_F11
@@ -116,7 +116,7 @@ extern combo_t key_combos[COMBO_LENGTH];
 
 #define __FNMOUSE_R1__ ZOOM_OUT, ZOOM_IN, MS_BTN1, MS_BTN2,  KC_WWW_FORWARD
 #define __FNMOUSE_R2__ MS_LEFT,  MS_DOWN, MS_UP,   MS_RGHT,  KC_WWW_BACK
-#define __FNMOUSE_R3__ MS_WHLL,  MS_WHLD, MS_WHLU, MS_WHLR,  KC_WWW_HOME
+#define __FNMOUSE_R3__ MS_WHLL,  MS_WHLD, MS_WHLU, MS_WHLR,  ZOOM_RESET
 #define __FNMOUSE_RT__ __EMPTY3__
 
 #define __SYSMEDIA_L1__ __EMPTY5__
