@@ -92,7 +92,7 @@ extern combo_t key_combos[COMBO_LENGTH];
 #define __SYML_L1__ KC_AT,             KC_LABK,        KC_RABK,        KC_HASH,        KC_PERC
 #define __SYML_L2__ KC_EXLM,           KC_MINUS,       KC_PLUS,        KC_EQUAL,       KC_DQUO
 #define __SYML_L3__ ST_MACRO_HOME_DIR, KC_BSLS,        KC_ASTR,        KC_QUOTE,       KC_QUES
-#define __SYML_LT__ KC_DEL,            _______,        KC_DEL
+#define __SYML_LT__ KC_DEL,            KC_ESC,         KC_DEL
 
 #define __SYMR_R1__ KC_PIPE,           KC_COLN,        KC_LCBR,        KC_RCBR,        KC_GRAVE
 #define __SYMR_R2__ KC_AMPR,           KC_UNDS,        KC_LPRN,        KC_RPRN,        KC_CIRC
@@ -139,9 +139,9 @@ extern combo_t key_combos[COMBO_LENGTH];
 #define __NUMBERS_R3__ __EMPTY5__
 #define __NUMBERS_RT__ __EMPTY3__
 
-#define __ONEHAND_L1__ KC_WWW_FORWARD, MS_WHLU, MS_WHLD, KC_HOME, ZOOM_RESET
-#define __ONEHAND_L2__ KC_WWW_BACK,    MS_BTN2, MS_BTN1, MS_BTN3, ZOOM_IN
-#define __ONEHAND_L3__ KC_WWW_HOME,    KC_PGUP, KC_PGDN, KC_END,  ZOOM_OUT
+#define __ONEHAND_L1__ KC_WWW_FORWARD, MS_BTN2, MS_BTN1, ZOOM_IN, ZOOM_OUT
+#define __ONEHAND_L2__ KC_WWW_BACK,    KC_HOME, KC_PGUP, KC_PGDN, KC_END
+#define __ONEHAND_L3__ ZOOM_RESET,     MS_WHLL, MS_WHLU, MS_WHLD, MS_WHLR
 #define __ONEHAND_LT__ _______,        KC_NO,    _______
 
 #define __ONEHAND_R1__ __EMPTY5__

@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                (__SYML_L1__, __EMPTY5__,
                 __SYML_L2__, __HRM_RIGHT__,
                 __SYML_L3__, __EMPTY5__,
-                KC_DEL,  __EMPTY3__
+                KC_DEL,  KC_ESC, __EMPTY2__
 	              ),
   [L_SYMR] = LAYOUT_wrapper
                (__EMPTY5__, __SYMR_R1__,

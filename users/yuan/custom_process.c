@@ -16,8 +16,8 @@ combo_t key_combos[COMBO_LENGTH] = {
   [CV] = COMBO(combo_cv, CW_TOGG),
   [XC] = COMBO(combo_xc, 0),
   [MC] = COMBO(combo_mc, 0),
-  [QW] = COMBO(combo_qw, KC_ESC),
-  [ZX] = COMBO(combo_zx, 0),
+  [QW] = COMBO(combo_qw, 0),
+  [ZX] = COMBO(combo_zx, KC_ESC),
 };
 #endif
 
@@ -190,7 +190,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
       }
     }
     break;
-  case ZX:
+  case QW:
     if (pressed) {
       if (!onehand_layer_active) {
         onehand_layer_active = true;
