@@ -92,62 +92,62 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
               __BASE_L1__, __EMPTY2__, __BASE_R1__,
 	            __BASE_L2__, __EMPTY2__, __BASE_R2__,
               __BASE_L3__, __EMPTY4__, __BASE_R3__,
-              _______, __BASE_LT__, __EMPTY2__, __BASE_RT__, _______
+              _______, __BASE_LT__, __EMPTY4__, __BASE_RT__, _______
 	            ),
 [L_SYML] = LAYOUT_wrapper
              (__EMPTY12__,
               __SYML_L1__, __EMPTY7__,
               __SYML_L2__, __EMPTY2__, __HRM_RIGHT__,
               __SYML_L3__, __EMPTY9__,
-              _______, __SYML_LT__, __EMPTY6__
+              _______, __SYML_LT__, __EMPTY7__
 	            ),
 [L_SYMR] = LAYOUT_wrapper
              (__EMPTY12__,
               __EMPTY7__, __SYMR_R1__,
               __HRM_LEFT__, __EMPTY2__, __SYMR_R2__,
               __EMPTY9__, __SYMR_R3__,
-              __EMPTY6__, __SYMR_RT__, _______
+              __EMPTY7__, __SYMR_RT__, _______
 	            ),
 [L_NUM] = LAYOUT_wrapper
             (__EMPTY12__,
              __NUM_L1__, __EMPTY7__,
              __NUM_L2__, __EMPTY2__, __HRM_RIGHT__,
              __NUM_L3__,__EMPTY9__,
-             _______, __NUM_LT__, __EMPTY6__
+             _______, __NUM_LT__, __EMPTY7__
 	           ),
 [L_NAV] = LAYOUT_wrapper
             (__EMPTY12__,
              __EMPTY7__,__NAV_R1__,
              __HRM_LEFT__, __EMPTY2__, __NAV_R2__,
              __EMPTY9__, __NAV_R3__,
-             __EMPTY6__, __NAV_RT__, _______
+             __EMPTY7__, __NAV_RT__, _______
 	           ),
 [L_FNMOUSE] = LAYOUT_wrapper
                 (__EMPTY12__,
                  __FNMOUSE_L1__, __EMPTY2__, __FNMOUSE_R1__,
                  __FNMOUSE_L2__, __EMPTY2__, __FNMOUSE_R2__,
                  __FNMOUSE_L3__, __EMPTY4__, __FNMOUSE_R3__,
-                 _______, __FNMOUSE_LT__, __EMPTY2__, __FNMOUSE_RT__, _______
+                 _______, __FNMOUSE_LT__, __EMPTY4__, __FNMOUSE_RT__, _______
 	               ),
 [L_SYSMEDIA] = LAYOUT_wrapper
                  (__EMPTY12__,
                   __SYSMEDIA_L1__, __EMPTY2__, __SYSMEDIA_R1__,
                   __SYSMEDIA_L2__, __EMPTY2__, __SYSMEDIA_R2__,
                   __SYSMEDIA_L3__, __EMPTY4__, __SYSMEDIA_R3__,
-                  _______, __SYSMEDIA_LT__,  __EMPTY2__, __SYSMEDIA_RT__, _______
+                  _______, __SYSMEDIA_LT__,  __EMPTY4__, __SYSMEDIA_RT__, _______
 	                ),
 /* [L_NUMBERS] = LAYOUT_wrapper */
 /*                 (__EMPTY12__, */
 /*                  __NUMBERS_L1__, __EMPTY2__, __NUMBERS_R1__, */
 /*                  __NUMBERS_L2__, __EMPTY2__, __NUMBERS_R2__, */
 /*                  __NUMBERS_L3__, __EMPTY4__, __NUMBERS_R3__, */
-/*                  _______, __NUMBERS_LT__,  __EMPTY2__, __NUMBERS_RT__, _______ */
+/*                  _______, __NUMBERS_LT__,  __EMPTY4__, __NUMBERS_RT__, _______ */
 /* 	               ), */
 [L_ONEHAND] = LAYOUT_wrapper
                 (__EMPTY12__,
                  __ONEHAND_L1__, __EMPTY2__, __ONEHAND_R1__,
                  __ONEHAND_L2__, __EMPTY2__, __ONEHAND_R2__,
                  __ONEHAND_L3__, __EMPTY4__, __ONEHAND_R3__,
-                 _______, __ONEHAND_LT__,  __EMPTY2__, __ONEHAND_RT__, _______
+                 _______, __ONEHAND_LT__,  __EMPTY4__, __ONEHAND_RT__, _______
 	               ),
 };

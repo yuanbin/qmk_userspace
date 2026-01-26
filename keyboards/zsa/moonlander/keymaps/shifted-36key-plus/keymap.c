@@ -23,7 +23,7 @@
 #define MOON_LED_LEVEL LED_LEVEL
 #define L_ONEHAND L_LAST
 
-#define LAYOUT_wrapper(...)   LAYOUT_moonlander(__VA_ARGS__)
+#define LAYOUT_wrapper(...) LAYOUT_moonlander(__VA_ARGS__)
 
 /*
   moonlander on each side: 7 7 7 6 6 3
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	              __BASE_L1__, __EMPTY4__, __BASE_R1__,
                 __BASE_L2__, __EMPTY4__, __BASE_R2__,
                 __BASE_L3__, __EMPTY2__, __BASE_R3__,
-                __EMPTY3__, __BASE_LT__, __BASE_RT__, __EMPTY3__,
+                __EMPTY3__, __BASE_LT__, __EMPTY2__, __BASE_RT__, __EMPTY3__,
                 __EMPTY6__
 	              ),
   [L_SYML] = LAYOUT_wrapper
@@ -64,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 __SYML_L1__, __EMPTY9__,
                 __SYML_L2__, __EMPTY4__, __HRM_RIGHT__,
                 __SYML_L3__, __EMPTY7__,
-                __EMPTY3__, KC_DEL, __EMPTY8__,
+                __EMPTY3__, __SYML_LT__, __EMPTY7__,
                 __EMPTY6__
 	              ),
   [L_SYMR] = LAYOUT_wrapper
@@ -80,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                __NUM_L1__, __EMPTY9__,
                __NUM_L2__, __EMPTY4__, __HRM_RIGHT__,
                __NUM_L3__,__EMPTY7__,
-               __EMPTY4__, LAR, __EMPTY7__,
+               __EMPTY3__, __NUM_LT__, __EMPTY7__,
                __EMPTY6__
 	             ),
   [L_NAV] = LAYOUT_wrapper
@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                __EMPTY9__,__NAV_R1__,
                __HRM_LEFT__, __EMPTY4__, __NAV_R2__,
                __EMPTY7__, __NAV_R3__,
-               __EMPTY7__, KC_PGDN, KC_PGUP, __EMPTY3__,
+               __EMPTY12__,
                __EMPTY6__
 	             ),
   [L_FNMOUSE] = LAYOUT_wrapper
@@ -96,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                    __FNMOUSE_L1__, __EMPTY4__, __FNMOUSE_R1__,
                    __FNMOUSE_L2__, __EMPTY4__, __FNMOUSE_R2__,
                    __FNMOUSE_L3__, __EMPTY2__, __FNMOUSE_R3__,
-                   __EMPTY3__, DM_PLY1, DM_PLY2, __EMPTY7__,
+                   __EMPTY3__, __FNMOUSE_LT__, __EMPTY2__, __FNMOUSE_RT__, __EMPTY3__,
                    __EMPTY6__
 	                 ),
   [L_SYSMEDIA] = LAYOUT_wrapper
@@ -104,8 +104,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     RGB_SAD, RGB_SAI, RGB_VAD, RGB_VAI, MOON_LED_LEVEL, __EMPTY4__, __SYSMEDIA_R1__,
                     _______, RGB_MODE_FORWARD, TOGGLE_LAYER_COLOR, RGB_TOG, __EMPTY5__, __SYSMEDIA_R2__,
                     RGB_SPD, RGB_SPI, RGB_HUD, RGB_HUI, __EMPTY3__, __SYSMEDIA_R3__,
-                    __EMPTY12__,
-                    KC_CAPS, QK_BOOT, _______, _______, QK_BOOT, KC_SYRQ
+                    __EMPTY3__, __SYSMEDIA_LT__, __EMPTY2__, __SYSMEDIA_RT__, __EMPTY3__,
+                    __EMPTY6__
 	                  ),
   /* [L_NUMBERS] = LAYOUT_wrapper */
   /*                 (__EMPTY14__, */
@@ -120,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                    __ONEHAND_L1__, __EMPTY4__, __ONEHAND_R1__,
                    __ONEHAND_L2__, __EMPTY4__, __ONEHAND_R2__,
                    __ONEHAND_L3__, __EMPTY2__, __ONEHAND_R3__,
-                   __EMPTY12__,
+                   __EMPTY3__, __ONEHAND_LT__, __EMPTY2__, __ONEHAND_RT__, __EMPTY3__,
                    __EMPTY6__
 	                 ),
 };

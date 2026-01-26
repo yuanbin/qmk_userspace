@@ -29,54 +29,54 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                (__BASE_L1__, __BASE_R1__,
 	              __BASE_L2__, __BASE_R2__,
                 __BASE_L3__, __BASE_R3__,
-                LT(L_NAV, KC_BSPC), LT(L_SYMR, KC_ENTER), LT(L_SYML, KC_SPACE), LT(L_NUM, KC_TAB)
+                __BASE_LT__, __BASE_RT__
 	              ),
   [L_SYML] = LAYOUT_wrapper
                (__SYML_L1__, __EMPTY5__,
                 __SYML_L2__, __HRM_RIGHT__,
                 __SYML_L3__, __EMPTY5__,
-                KC_DEL,  KC_ESC, __EMPTY2__
+                __SYML_LT__, __EMPTY2__
 	              ),
   [L_SYMR] = LAYOUT_wrapper
                (__EMPTY5__, __SYMR_R1__,
                 __HRM_LEFT__, __SYMR_R2__,
                 __EMPTY5__, __SYMR_R3__,
-                __EMPTY4__
+                __EMPTY2__, __SYMR_RT__
 	              ),
   [L_NUM] = LAYOUT_wrapper
               (__NUM_L1__, __EMPTY5__,
                __NUM_L2__, __HRM_RIGHT__,
                __NUM_L3__, __EMPTY5__,
-               _______,  LAR, __EMPTY2__
+               __NUM_LT__, __EMPTY2__
 	             ),
   [L_NAV] = LAYOUT_wrapper
               (__EMPTY5__,__NAV_R1__,
                __HRM_LEFT__, __NAV_R2__,
                __EMPTY5__, __NAV_R3__,
-               __EMPTY4__
+               __EMPTY2__, __NAV_RT__
 	             ),
   [L_FNMOUSE] = LAYOUT_wrapper
                   (__FNMOUSE_L1__, __FNMOUSE_R1__,
                    __FNMOUSE_L2__, __FNMOUSE_R2__,
                    __FNMOUSE_L3__, __FNMOUSE_R3__,
-                   DM_PLY1, DM_PLY2, __EMPTY2__
+                   __FNMOUSE_LT__, __FNMOUSE_RT__
 	                 ),
   [L_SYSMEDIA] = LAYOUT_wrapper
                    (__SYSMEDIA_L1__, __SYSMEDIA_R1__,
                     __SYSMEDIA_L2__, __SYSMEDIA_R2__,
                     __SYSMEDIA_L3__, __SYSMEDIA_R3__,
-                    KC_CAPS, QK_BOOT, QK_BOOT, KC_SYRQ
+                    __SYSMEDIA_LT__, __SYSMEDIA_RT__
 	                  ),
   /* [L_NUMBERS] = LAYOUT_wrapper */
   /*                 (__NUMBERS_L1__, __NUMBERS_R1__, */
   /*                  __NUMBERS_L2__, __NUMBERS_R2__, */
   /*                  __NUMBERS_L3__, __NUMBERS_R3__, */
-  /*                  __EMPTY4__ */
+  /*                  __NUMBERS_LT__, __NUMBERS_RT__, */
 	/*                  ), */
   [L_ONEHAND] = LAYOUT_wrapper
                   (__ONEHAND_L1__, __ONEHAND_R1__,
                    __ONEHAND_L2__, __ONEHAND_R2__,
                    __ONEHAND_L3__, __ONEHAND_R3__,
-                   _______, KC_NO, __EMPTY2__
+                   __ONEHAND_LT__, __ONEHAND_RT__
 	                 ),
 };
