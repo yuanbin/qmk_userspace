@@ -46,9 +46,9 @@ static const uint16_t num_keys[] = {
 
 static bool onehand_layer_active = false;
 static const uint16_t onehand_keys[] = {
-  KC_WWW_FORWARD, MS_WHLU, MS_WHLD, KC_HOME,  ZOOM_RESET,
-  KC_WWW_BACK,    MS_BTN2, MS_BTN1, MS_BTN3, ZOOM_IN,
-  KC_WWW_HOME,    KC_PGUP, KC_PGDN, KC_END, ZOOM_OUT
+  KC_WWW_FORWARD, MS_BTN2, MS_BTN1, ZOOM_IN, ZOOM_OUT,
+  KC_WWW_BACK,    MS_LEFT, MS_UP,   MS_DOWN, MS_RGHT,
+  ZOOM_RESET,     MS_WHLL, MS_WHLU, MS_WHLD, MS_WHLR
 };
 
 /* static uint16_t sticky_timer  = 0; */
